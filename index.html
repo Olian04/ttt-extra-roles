@@ -2,7 +2,6 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -10,120 +9,204 @@ body {
 }
 
 :root {
-  --page-height: 90vh;
-  --page-width: min(100vw, 1000px);
-  --card-height: calc(var(--page-height) / 6);
-  --card-width: calc(var(--page-width) / 4);
+  --card-scale: 0.46;
+  --card-height: calc(358px * var(--card-scale));
+  --card-width: calc(637px * var(--card-scale));
+  --page-height: 100vh;
+  --page-width: min(100vw, calc(var(--card-width) * 3));
+  --team-border-width: 2px;
+  --team-border-color-innocent: #1AC819;
+  --team-border-color-traitor: #C71918;
+  --team-border-color-neutral: #D5B795;
 }
 
 .container {
-  display: block;
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
   left: calc((100vw - var(--page-width)) / 2);
-  top: 5vh;
+  top: 0;
   height: var(--page-height);
   width: var(--page-width);
 }
 
-.body {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: var(--page-width);
-  height: calc(var(--card-height) * 5);
+.selected {
+  --card-scale: 1;
+  --card-height: calc(358px * var(--card-scale));
+  --card-width: calc(637px * var(--card-scale));
 }
 
-.column {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
-  position: relative;
-  width: calc(var(--card-width) * 2);
+.other-selected {
+  display: none;
 }
 
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.card {
   position: relative;
-  width: var(--page-width);
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
   height: var(--card-height);
-}
-
-.card-large {
-  display: block;
-  position: relative;
   width: var(--card-width);
-  height: var(--card-height);
+  border-width: var(--team-border-width);
+  border-style: solid;
 }
 
-.card-small {
-  display: block;
-  position: relative;
-  width: var(--card-width);
-  height: var(--card-height);
+.card:nth-child(1) {
+  border-color: var(--team-border-color-innocent);
+  border-right: none;
+}
+.card:nth-child(2) {
+  border-color: var(--team-border-color-innocent);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(3) {
+  border-color: var(--team-border-color-innocent);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(4) {
+  border-color: var(--team-border-color-innocent);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(5) {
+  border-color: var(--team-border-color-innocent);
+  border-left: none;
+}
+
+.card:nth-child(6) {
+  border-color: var(--team-border-color-traitor);
+  border-right: none;
+}
+.card:nth-child(7) {
+  border-color: var(--team-border-color-traitor);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(8) {
+  border-color: var(--team-border-color-traitor);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(9) {
+  border-color: var(--team-border-color-traitor);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(10) {
+  border-color: var(--team-border-color-traitor);
+  border-left: none;
+}
+
+.card:nth-child(11) {
+  border-color: var(--team-border-color-neutral);
+  border-right: none;
+}
+.card:nth-child(12) {
+  border-color: var(--team-border-color-neutral);
+  border-right: none;
+  border-left: none;
+}
+.card:nth-child(13) {
+  border-color: var(--team-border-color-neutral);
+  border-left: none;
 }
 
 img {
   display: block;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 </style>
 
 <body>
-  <div class="container">
-    <div class="body">
-      <div class="column">
-        <div class="card-large">
-          <img src="./resources/innocent.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/detective.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/mercenary.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/phantom.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/glitch.jpg">
-        </div>
-      </div>
-      <div class="column">
-        <div class="card-large">
-          <img src="./resources/traitor.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/assassin.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/hypnosist.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/vampire.jpg">
-        </div>
-        <div class="card-large">
-          <img src="./resources/zombie.jpg">
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="card-small">
-          <img src="./resources/jester.jpg">
-        </div>
-      <div class="card-small">
-          <img src="./resources/swapper.jpg">
-        </div>
-      <div class="card-small">
-          <img src="./resources/killer.jpg">
-        </div>
-    </div>
+<div class="container">
+  <div class="card">
+    <img src="./resources/innocent.jpg">
   </div>
+  <div class="card">
+    <img src="./resources/detective.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/mercenary.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/phantom.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/glitch.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/traitor.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/assassin.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/hypnosist.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/vampire.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/zombie.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/jester.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/swapper.jpg">
+  </div>
+  <div class="card">
+    <img src="./resources/killer.jpg">
+  </div>
+</div>
+  
+<script>
+let cardScale = 0.46;
+
+const updateCardScale = (modification) => {
+	cardScale += modification;
+	document.documentElement.style.setProperty('--card-scale', cardScale);
+};
+
+updateCardScale(0);
+document.addEventListener('wheel', (ev) => {
+  if (ev.wheelDelta > 0) {
+  	updateCardScale(+0.01);
+  } else if(ev.wheelDelta < 0) {
+  	updateCardScale(-0.01);
+  }
+});
+
+const allCards = document.querySelectorAll('.card');
+allCards.forEach(el => {
+  	el.addEventListener('click', () => {
+    	if (el.classList.contains('selected')) {
+      	el.classList.remove('selected');
+        const listner = () => {
+      		allCards.forEach(e => {
+            e.classList.remove('other-selected');
+          });
+       	 el.removeEventListener('transitionend', listner);
+        }
+        el.addEventListener('transitionend', listner);
+        return;
+      }
+      allCards.forEach(e => {
+        e.classList.add('other-selected');
+        e.classList.remove('selected');
+      });
+      el.classList.add('selected');
+      el.classList.remove('other-selected');
+    	
+    });
+  })
+</script>
 </body>

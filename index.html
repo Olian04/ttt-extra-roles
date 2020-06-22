@@ -23,14 +23,22 @@ body {
 .container {
   position: absolute;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: space-around;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
   left: calc((100vw - var(--page-width)) / 2);
   top: 0;
   height: var(--page-height);
   width: var(--page-width);
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
 }
 
 .selected {
@@ -53,64 +61,64 @@ body {
   border-style: solid;
 }
 
-.card:nth-child(1) {
+.row:nth-child(1) > .card:nth-child(1) {
   border-color: var(--team-border-color-innocent);
   border-right: none;
 }
-.card:nth-child(2) {
-  border-color: var(--team-border-color-innocent);
-  border-right: none;
-  border-left: none;
-}
-.card:nth-child(3) {
+.row:nth-child(1) > .card:nth-child(2) {
   border-color: var(--team-border-color-innocent);
   border-right: none;
   border-left: none;
 }
-.card:nth-child(4) {
+.row:nth-child(1) > .card:nth-child(3) {
   border-color: var(--team-border-color-innocent);
   border-right: none;
   border-left: none;
 }
-.card:nth-child(5) {
+.row:nth-child(1) > .card:nth-child(4) {
+  border-color: var(--team-border-color-innocent);
+  border-right: none;
+  border-left: none;
+}
+.row:nth-child(1) > .card:nth-child(5) {
   border-color: var(--team-border-color-innocent);
   border-left: none;
 }
 
-.card:nth-child(6) {
+.row:nth-child(2) > .card:nth-child(1) {
   border-color: var(--team-border-color-traitor);
   border-right: none;
 }
-.card:nth-child(7) {
-  border-color: var(--team-border-color-traitor);
-  border-right: none;
-  border-left: none;
-}
-.card:nth-child(8) {
+.row:nth-child(2) > .card:nth-child(2) {
   border-color: var(--team-border-color-traitor);
   border-right: none;
   border-left: none;
 }
-.card:nth-child(9) {
+.row:nth-child(2) > .card:nth-child(3) {
   border-color: var(--team-border-color-traitor);
   border-right: none;
   border-left: none;
 }
-.card:nth-child(10) {
+.row:nth-child(2) > .card:nth-child(4) {
+  border-color: var(--team-border-color-traitor);
+  border-right: none;
+  border-left: none;
+}
+.row:nth-child(2) > .card:nth-child(5) {
   border-color: var(--team-border-color-traitor);
   border-left: none;
 }
 
-.card:nth-child(11) {
+.row:nth-child(3) > .card:nth-child(1) {
   border-color: var(--team-border-color-neutral);
   border-right: none;
 }
-.card:nth-child(12) {
+.row:nth-child(3) > .card:nth-child(2) {
   border-color: var(--team-border-color-neutral);
   border-right: none;
   border-left: none;
 }
-.card:nth-child(13) {
+.row:nth-child(3) > .card:nth-child(3) {
   border-color: var(--team-border-color-neutral);
   border-left: none;
 }
@@ -127,44 +135,50 @@ img {
 
 <body>
 <div class="container">
-  <div class="card">
-    <img src="./resources/innocent.jpg">
+  <div class="row">
+    <div class="card">
+      <img src="./resources/innocent.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/detective.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/mercenary.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/phantom.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/glitch.jpg">
+    </div>
   </div>
-  <div class="card">
-    <img src="./resources/detective.jpg">
+  <div class="row">
+    <div class="card">
+      <img src="./resources/traitor.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/assassin.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/hypnosist.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/vampire.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/zombie.jpg">
+    </div>
   </div>
-  <div class="card">
-    <img src="./resources/mercenary.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/phantom.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/glitch.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/traitor.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/assassin.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/hypnosist.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/vampire.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/zombie.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/jester.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/swapper.jpg">
-  </div>
-  <div class="card">
-    <img src="./resources/killer.jpg">
+  <div class="row">
+    <div class="card">
+      <img src="./resources/jester.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/swapper.jpg">
+    </div>
+    <div class="card">
+      <img src="./resources/killer.jpg">
+    </div>
   </div>
 </div>
   

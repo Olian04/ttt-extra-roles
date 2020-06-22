@@ -4,25 +4,23 @@
   margin: 0;
   box-sizing: border-box;
 }
-  
+
 body {
   background: #6D7173;
 }
 
 :root {
-  --page-height: 100vh;
-  --page-width: min(100vw, 600px);
+  --page-height: 90vh;
+  --page-width: min(100vw, 1000px);
   --card-height: calc(var(--page-height) / 6);
-  --card-width-large: calc(var(--page-width) / 2);
-  --card-width-small: calc(var(--page-width) / 3);
+  --card-width: calc(var(--page-width) / 4);
 }
 
 .container {
   display: block;
   position: absolute;
-  padding-left: calc((100vw - var(--page-width)) / 2);
-  left: 0;
-  top: 0;
+  left: calc((100vw - var(--page-width)) / 2);
+  top: 5vh;
   height: var(--page-height);
   width: var(--page-width);
 }
@@ -36,14 +34,19 @@ body {
 }
 
 .column {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
   position: relative;
-  width: var(--card-width-large);
+  width: calc(var(--card-width) * 2);
 }
 
 .footer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   position: relative;
   width: var(--page-width);
   height: var(--card-height);
@@ -52,14 +55,14 @@ body {
 .card-large {
   display: block;
   position: relative;
-  width: var(--card-width-large);
+  width: var(--card-width);
   height: var(--card-height);
 }
 
 .card-small {
   display: block;
   position: relative;
-  width: var(--card-width-small);
+  width: var(--card-width);
   height: var(--card-height);
 }
 

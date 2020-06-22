@@ -1,0 +1,120 @@
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-height: 100vh;
+  --page-width: min(100vw, 600px);
+  --card-height: calc(var(--page-height) / 6);
+  --card-width-large: calc(var(--page-width) / 2);
+  --card-width-small: calc(var(--page-width) / 3);
+}
+
+.container {
+  display: block;
+  position: absolute;
+  padding-left: calc((100vw - var(--page-width)) / 2);
+  left: 0;
+  top: 0;
+  height: var(--page-height);
+  width: var(--page-width);
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: var(--page-width);
+  height: calc(var(--card-height) * 5);
+}
+
+.column {
+  display: block;
+  position: relative;
+  width: var(--card-width-large);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: var(--page-width);
+  height: var(--card-height);
+}
+
+.card-large {
+  display: block;
+  position: relative;
+  width: var(--card-width-large);
+  height: var(--card-height);
+}
+
+.card-small {
+  display: block;
+  position: relative;
+  width: var(--card-width-small);
+  height: var(--card-height);
+}
+
+img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="container">
+  <div class="body">
+    <div class="column">
+      <div class="card-large">
+        <img src="./resources/innocent.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/detective.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/mercenary.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/phantom.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/glitch.jpg">
+      </div>
+    </div>
+    <div class="column">
+      <div class="card-large">
+        <img src="./resources/traitor.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/assassin.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/hypnosist.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/vampire.jpg">
+      </div>
+      <div class="card-large">
+        <img src="./resources/zombie.jpg">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="card-small">
+        <img src="./resources/jester.jpg">
+      </div>
+    <div class="card-small">
+        <img src="./resources/swapper.jpg">
+      </div>
+    <div class="card-small">
+        <img src="./resources/killer.jpg">
+      </div>
+  </div>
+</div>

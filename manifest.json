@@ -9,8 +9,8 @@
   "background_color": "#6D7173",
   "icons": [
     {
-      "src": "/ttt-extra-roles/icon-384.png",
-      "sizes": "384x384",
+      "src": "/ttt-extra-roles/icon.png",
+      "sizes": "260x260",
       "type": "image/png"
     }
   ]

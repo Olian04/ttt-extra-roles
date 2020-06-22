@@ -1,5 +1,7 @@
 # ttt-extra-roles
 
+![](resources/preview.png)
+
 ## What?
 
 An installable cheat sheet for the roles added to TTT via the ["Custom Roles for TTT" addon](https://steamcommunity.com/sharedfiles/filedetails/?id=1215502383).

@@ -1,0 +1,17 @@
+{
+  "short_name": "TTT-Roles",
+  "name": "TTT Extra Roles",
+  "description" : "Cheat sheet for Trouble in Terrorist Town custom roles",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "theme_color": "#6D7173",
+  "background_color": "#6D7173",
+  "icons": [
+    {
+      "src": "/ttt-extra-roles/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ]
+}
